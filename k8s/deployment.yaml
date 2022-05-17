@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: categorymanagement
+spec:
+  selector:
+    matchLabels:
+      app: categorymanagement
+  replicas: 2
+  template:
+      metadata:
+        labels:
+          app: categorymanagement
+      spec:
+        containers:
+        - name: categorymanagement
+          image: hiru99/categorymanage
+          ports:
+            - containerPort: 5000
